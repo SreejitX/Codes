@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int n, digit, smallest;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    // Take the last digit as the initial smallest
+    smallest = n % 10;
+
+    // Process all digits
+    while (n > 0) {
+        digit = n % 10;
+        if (digit < smallest) {
+            smallest = digit;
+        }
+        n = n / 10;
+    }
+
+    printf("Smallest digit is: %d\n", smallest);
+
+    return 0;
